@@ -1,0 +1,16 @@
+.navbar a {
+	color: white !important;
+	border: 0 !important;
+}
+.navbar ul li ul li a {
+	color: darkgrey !important;
+}
+nav.navbar {
+	background-color: #7925EC;
+}
+.navbar-nav > .active > a {
+	background-color: #8F49EE !important;
+}
+.navbar-nav>.open>a {
+	background-color: #8F49EE !important;
+}

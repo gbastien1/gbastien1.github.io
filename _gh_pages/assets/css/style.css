@@ -1,0 +1,5 @@
+@import url("navbar.css");
+
+* {
+  border-radius: 0 !important;
+}
