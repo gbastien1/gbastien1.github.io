@@ -16,7 +16,7 @@ permalink: /cv
             <h3 class="page-header">Comp&eacute;tences</h3>
         </div>
 
-        <div class="col-sm-3 col-xs-6">
+        <div class="col-sm-4 col-xs-6">
             <h4>Langages</h4>
             {% for c in site.data.competences['langages'] %}
             <div class="competence-bar progress">
@@ -28,7 +28,7 @@ permalink: /cv
             {% endfor %}
         </div>
 
-        <div class="col-sm-3 col-xs-6">
+        <div class="col-sm-4 col-xs-6">
             <h4>Frameworks</h4>
             {% for c in site.data.competences['frameworks'] %}
             <div class="competence-bar progress">
@@ -40,19 +40,7 @@ permalink: /cv
             {% endfor %}
         </div>
 
-        <div class="col-sm-3 col-xs-6">
-            <h4>Logiciels</h4>
-            {% for c in site.data.competences['logiciels'] %}
-            <div class="competence-bar progress">
-                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="{{c.value}}"
-                  aria-valuemin="0" aria-valuemax="100" style="width:{{c.value}}%">
-                    <p>{{c.name}}</p>
-                  </div>
-            </div>
-            {% endfor %}
-        </div>
-
-        <div class="col-sm-3 col-xs-6">
+        <div class="col-sm-4 col-xs-6">
             <h4>Divers</h4>
             {% for c in site.data.competences['divers'] %}
             <div class="competence-bar progress">

@@ -31,13 +31,15 @@ frameworks:
     - name: Jekyll
       value: 50
 
-logiciels:
+divers:
     - name: Photoshop
       value: 80
 
     - name: Illustrator
       value: 40
 
-divers:
+    - name: Unity 3D
+      value: 30
+
     - name: Git
       value: 60
