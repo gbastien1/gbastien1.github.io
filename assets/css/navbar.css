@@ -27,3 +27,9 @@ nav.navbar {
 	color: white;
 	font-size: 1.2em
 }
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+	.navbar ul li ul li a {
+		color: #fff !important;
+	}
+}
