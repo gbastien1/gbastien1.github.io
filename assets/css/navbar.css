@@ -1,7 +1,7 @@
-@import url(https://fonts.googleapis.com/css?family=Pacifico);
+@import url(https://fonts.googleapis.com/css?family=Dancing+Script:700);
 .navbar-brand {
-	font-family: 'Pacifico', cursive;
-	font-size: 1.6em;
+	font-family: 'Dancing Script', cursive;
+	font-size: 2em;
 	margin-right: 2em;
 	padding-left: 3em;
 }
@@ -10,7 +10,7 @@
 	border: 0 !important;
 }
 .navbar ul li ul li a {
-	color: darkgrey !important;
+	color: #545454 !important;
 }
 nav.navbar {
 	background-color: #7925EC;

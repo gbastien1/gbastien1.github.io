@@ -1,0 +1,43 @@
+langages:
+    - name: HTML/CSS
+      value: 70
+
+    - name: Javascript
+      value: 45
+
+    - name: SQL
+      value: 40
+
+    - name: Python
+      value: 45
+
+    - name: Java
+      value: 55
+
+    - name: C++
+      value: 40
+
+
+frameworks:
+    - name: jQuery 
+      value: 75
+
+    - name: Twitter Bootstrap
+      value: 60
+
+    - name: Django
+      value: 30
+
+    - name: Jekyll
+      value: 50
+
+logiciels:
+    - name: Photoshop
+      value: 80
+
+    - name: Illustrator
+      value: 40
+
+divers:
+    - name: Git
+      value: 60
