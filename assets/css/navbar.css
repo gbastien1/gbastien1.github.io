@@ -21,3 +21,9 @@ nav.navbar {
 .navbar-nav>.open>a {
 	background-color: #8F49EE !important;
 }
+#hamburger {
+	border: 0;
+	background: transparent;
+	color: white;
+	font-size: 1.2em
+}
