@@ -1,0 +1,16 @@
+---
+title: Simulation de tissus Open-GL
+type: Travail scolaire
+date: 2016-04-01
+layout: default
+image: /assets/img/projets/opengl-drap.png
+external-url: 
+Technologies: 
+    - OpenGL
+    - GLSL
+    - C++
+    - Objective-C
+    - OS X
+---
+
+Travail scolaire réalisé dans le cadre du cours d'Animation par ordinateur de l'UQAC. Il s'agit d'une simulation d'un coup de vent dans un maillage qui agit comme un tissus sur une corde à linge. Le calcul de la position des sommets est réalisé dans le vertex shader en GLSL.

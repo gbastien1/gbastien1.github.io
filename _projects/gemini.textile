@@ -1,0 +1,14 @@
+---
+title: Gemini
+type: Gamejam
+date: 2016-03-05
+layout: default
+image: /assets/img/projets/gemini.jpg
+external-url: ""
+Technologies: 
+    - Unity 5
+    - C#
+    - Blender
+---
+
+Un jeu vidéo de type puzzle exploration créé en 48h dans le cadre du WonderJAM UQAC d'hiver 2016.

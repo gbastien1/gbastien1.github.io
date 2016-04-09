@@ -1,0 +1,14 @@
+---
+title: Travelexpress
+type: Travail scolaire
+date: 2016-03-30
+layout: default
+image: /assets/img/projets/travelexpress.png
+external-url: www.github.com/ferdbold/travelexpress
+Technologies: 
+    - Python / Django
+    - HTML / CSS
+    - Bootstrap
+---
+
+Travail réalisé dans le cours de Technologies web avancées à l'UQAC. Il s'agit d'un site web à la Amigo Express où des utilisateurs peuvent créer un compte, se connecter, publier des voyages comme conducteur, s'inscrire à des voyages comme passagers etc.
