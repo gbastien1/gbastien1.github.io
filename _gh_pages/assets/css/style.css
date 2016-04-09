@@ -8,6 +8,11 @@
 body {
 	font-family: 'Roboto', sans-serif;
 }
+
+/* INDEX */
+#recent_img {
+	border: 1px solid #E3E3E3;
+}
 #projects-showcase .project-image {
 	margin-top: 1em;
 	margin-bottom: 1em;

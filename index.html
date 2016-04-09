@@ -3,67 +3,56 @@ layout: default
 title: Gabrielle-Bastien
 permalink: /
 ---
-
+    
     <div class="container">
-
-        <div class="row">
+        {% for project in site.projects %}
+            <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">Dernier projet
-                    <small>titre du projet</small>
+                    <small>{{project.title}}</small>
                 </h1>
             </div>
         </div>
-        
-
         <div class="row">
-
             <div class="col-md-7">
-                <img class="img-responsive" src="http://placehold.it/620x400" alt="">
+                <a href="{{project.url}}">
+                    <img id="recent_img" class="img-responsive" src="{{site.url}}{{project.image}}" alt="most recent project image">
+                </a>
             </div>
 
             <div class="col-md-4">
                 <h3>Description</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.</p>
-                <h3>Technologies utilis&eacute;es</h3>
+                <p class="text-justify">{{project.content}}</p>
+                <br />
+                <h4>Technologies utilisées</h4>
                 <ul>
-                    <li>Lorem Ipsum</li>
-                    <li>Dolor Sit Amet</li>
-                    <li>Consectetur</li>
-                    <li>Adipiscing Elit</li>
+                {% for t in project.Technologies %}
+                    <li>{{t}}</li>
+                {% endfor %}
                 </ul>
             </div>
         </div>
+        {% endfor %}
         
-
+        
+        
         <div id="projects-showcase" class="row">
 
             <div class="col-lg-12">
                 <h3 class="page-header">Projets pr&eacute;c&eacute;dents</h3>
             </div>
 
-            <div class="col-sm-3 col-xs-6 project-image">
-                <a href="#">
-                    <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
-                </a>
-            </div>
 
-            <div class="col-sm-3 col-xs-6 project-image">
-                <a href="#">
-                    <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
-                </a>
-            </div>
-
-            <div class="col-sm-3 col-xs-6 project-image">
-                <a href="#">
-                    <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
-                </a>
-            </div>
-
-            <div class="col-sm-3 col-xs-6 project-image">
-                <a href="#">
-                    <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
-                </a>
-            </div>
+            {% for project in site.projects limit:5 %}
+            {% if forloop.index != 1 %}
+                <div class="col-sm-3 col-xs-6 project-image">
+                    <a href="#">
+                        <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
+                    </a>
+                </div>
+            {% endif %}
+            {% endfor %}
+            
 
         </div>
         <br /><a class="pull-right" href="portfolio.html">Voir tous les projets</a> <br />

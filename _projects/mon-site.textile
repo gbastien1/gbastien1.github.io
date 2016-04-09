@@ -1,0 +1,14 @@
+---
+title: Mon portfolio
+layout: default
+image: /assets/img/projet_mon-site.png
+external-url: gbastien1.github.io
+Technologies: 
+    - Jekyll
+    - Bootstrap
+    - HTML / CSS
+    - Markdown
+    - YAML
+---
+
+Mon portfolio personnel et professionnel regroupant les informations me concernant au niveau de la programmation et autres réalisations connexes.
