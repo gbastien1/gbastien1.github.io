@@ -21,3 +21,12 @@ body {
 #projects-showcase .portfolio-item {
 	border: 1px solid #EFEFEF;
 }
+
+/* ABOUT */
+#contact-list {
+	list-style-type: none;
+}
+.contact-icon {
+	width: 16px;
+	height: 16px;
+}
