@@ -17,6 +17,9 @@ langages:
     - name: C++
       value: 40
 
+    - name: OpenGL / GLSL
+      value: 50
+
 
 frameworks:
     - name: jQuery 
@@ -38,7 +41,7 @@ divers:
     - name: Illustrator
       value: 40
 
-    - name: Unity 3D
+    - name: Unity 5
       value: 30
 
     - name: Git

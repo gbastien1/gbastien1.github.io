@@ -1,7 +1,10 @@
 # Dependencies
 markdown:         rdiscount
 highlighter:      rouge
- 
+
+# site
+lang:             fr
+
 # Permalinks
 permalink:        pretty
  
@@ -12,6 +15,7 @@ port:             9001
 baseurl:          /
 encoding:         UTF-8
 
+# collections
 collections:
   projects:
     output: true
