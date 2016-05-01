@@ -21,6 +21,9 @@
                 <h3>Description</h3>
                 <p class="text-justify">{{content}}</p>
                 <p><strong>Type:</strong> {{page.type}}</p>
+                {% if page.external-url != "" %}
+                <p><strong>Lien: </strong><a href="{{page.external-url}}">{{page.link-title}}</a></p>
+                {% endif %}
                 <hr>
                 <h4>Technologies utilisées</h4>
                 <ul>
