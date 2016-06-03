@@ -7,7 +7,7 @@ permalink: /
     <div class="container animated fadeIn">
         {% assign projects = site.projects | sort: 'mydate' | reverse %}
         {% for project in projects limit:1 %}
-            <div class="row">
+        <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">Dernier projet
                     <small>{{project.title}}</small>

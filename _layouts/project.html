@@ -6,32 +6,32 @@
 
 <div class="container">
 <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">Projet: 
-                    <small>{{page.title}}</small>
-                </h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <img id="recent_img" class="img-responsive" src="{{site.url}}{{page.image}}" alt="most recent project image">
-            </div>
+    <div class="col-lg-12">
+        <h1 class="page-header">Projet: 
+            <small>{{page.title}}</small>
+        </h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <img id="recent_img" class="img-responsive" src="{{site.url}}{{page.image}}" alt="most recent project image">
+    </div>
 
-            <div class="col-md-5">
-                <h3>Description</h3>
-                <p class="text-justify">{{content}}</p>
-                <p><strong>Type:</strong> {{page.type}}</p>
-                {% if page.external-url != "" %}
-                <p><strong>Lien: </strong><a href="{{page.external-url}}">{{page.link-title}}</a></p>
-                {% endif %}
-                <hr>
-                <h4>Technologies utilisées</h4>
-                <ul>
-                {% for t in page.Technologies %}
-                    <li>{{t}}</li>
-                {% endfor %}
-                </ul>
-            </div>
-        </div>
+    <div class="col-md-5">
+        <h3>Description</h3>
+        <p class="text-justify">{{content}}</p>
+        <p><strong>Type:</strong> {{page.type}}</p>
+        {% if page.external-url != "" %}
+        <p><strong>Lien: </strong><a href="{{page.external-url}}">{{page.link-title}}</a></p>
+        {% endif %}
+        <hr>
+        <h4>Technologies utilisées</h4>
+        <ul>
+        {% for t in page.Technologies %}
+            <li>{{t}}</li>
+        {% endfor %}
+        </ul>
+    </div>
+</div>
 
 {% include footer.html %}
