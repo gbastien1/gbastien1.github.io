@@ -33,6 +33,7 @@ frameworks:
 
     - name: Jekyll
       value: 50
+      
 
 divers:
     - name: Photoshop
