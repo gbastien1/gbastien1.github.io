@@ -21,7 +21,7 @@ permalink: cv
             <h4>Langages</h4>
             {% for c in site.data.competences['langages'] %}
             <div class="competence-bar progress">
-                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="{{c.value}}"
+                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="{{c.value}}"
                   aria-valuemin="0" aria-valuemax="100" style="width:{{c.value}}%">
                     <p>{{c.name}}</p>
                   </div>
@@ -33,7 +33,7 @@ permalink: cv
             <h4>Frameworks / librairies / API</h4>
             {% for c in site.data.competences['frameworks'] %}
             <div class="competence-bar progress">
-                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="{{c.value}}"
+                <div class="progress-bar progress-bar" role="progressbar" aria-valuenow="{{c.value}}"
                   aria-valuemin="0" aria-valuemax="100" style="width:{{c.value}}%">
                     <p>{{c.name}}</p>
                   </div>
@@ -45,7 +45,7 @@ permalink: cv
             <h4>Divers</h4>
             {% for c in site.data.competences['divers'] %}
             <div class="competence-bar progress">
-                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="{{c.value}}"
+                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="{{c.value}}"
                   aria-valuemin="0" aria-valuemax="100" style="width:{{c.value}}%">
                     <p>{{c.name}}</p>
                   </div>
@@ -62,9 +62,9 @@ permalink: cv
             <div class="row">
                 <div class="col-md-3">{{e.date}}</div>
                 <div class="col-md-8">
-                    <strong>{{e.title}}</strong><br />
+                    <strong class="cv-title">{{e.title}}</strong><br />
                     <em>{{e.place}}</em><br />
-                    <p class="text-justify">{{e.description}}</p>
+                    <p class="text-justify cv-description">{{e.description}}</p>
                 </div>
             </div>
             {% endfor %}
@@ -75,7 +75,7 @@ permalink: cv
             <div class="row">
                 <div class="col-md-4">2013 - 2016</div>
                 <div class="col-md-8">
-                    <strong>Baccalauréat en informatique</strong><br />
+                    <strong class="cv-title">Baccalauréat en informatique</strong><br />
                     <em>Université du Québec à Chicoutimi</em><br />
                 </div>
             </div>
@@ -83,7 +83,7 @@ permalink: cv
             <div class="row">
                 <div class="col-md-4">2011 - 2013</div>
                 <div class="col-md-8">
-                    <strong>DEC en sciences de la nature</strong><br />
+                    <strong class="cv-title">DEC en sciences de la nature</strong><br />
                     <em>Cégep de Baie-Comeau</em><br />
                 </div>
             </div>
@@ -99,7 +99,7 @@ permalink: cv
             <div class="row">
                 <div class="col-md-3">{{b.year}}</div>
                 <div class="col-md-8">
-                    <strong>{{b.title}}</strong><br />
+                    <strong class="cv-title">{{b.title}}</strong><br />
                     <em>{{b.giver}}</em><br />
                 </div>
             </div>
@@ -109,8 +109,8 @@ permalink: cv
         <!-- langues parlées et écrites -->
         <div class="col-lg-4">
             <h3 class="page-header">Comp&eacute;tences linguistiques</h3>
-            <p><strong>Français:</strong> parlé et écrit</p>
-            <p><strong>Anglais:</strong> parlé et écrit</p>
+            <p><strong class="cv-title">Français:</strong> parlé et écrit</p>
+            <p><strong class="cv-title">Anglais:</strong> parlé et écrit</p>
         </div>
     </div>
 

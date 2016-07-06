@@ -24,10 +24,10 @@ permalink: /
             <div class="col-md-4">
                 <h3>Description</h3>
                 <p class="text-justify">{{project.content}}</p>
-                <p><strong>Type:</strong> {{project.type}}</p>
+                <p><strong style="color: #34B6EC;">Type:</strong> {{project.type}}</p>
                 <hr>
                 <h4>Technologies utilisées</h4>
-                <ul>
+                <ul id="techno-list">
                 {% for t in project.Technologies %}
                     <li>{{t}}</li>
                 {% endfor %}

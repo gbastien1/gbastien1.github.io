@@ -3,10 +3,10 @@ langages:
       value: 70
 
     - name: Javascript
-      value: 45
+      value: 50
 
     - name: SQL
-      value: 40
+      value: 35
 
     - name: Python
       value: 45
@@ -26,13 +26,16 @@ frameworks:
       value: 75
 
     - name: Twitter Bootstrap
-      value: 60
+      value: 90
 
     - name: Django
-      value: 30
+      value: 35
 
     - name: Jekyll
-      value: 50
+      value: 55
+
+    - name: AngularJS
+      value: 17
       
 
 divers:

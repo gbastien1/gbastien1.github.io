@@ -21,6 +21,19 @@ body {
 #projects-showcase .portfolio-item {
 	border: 1px solid #EFEFEF;
 }
+#techno-list {
+	list-style: none;
+	text-indent: 0;
+}
+#techno-list li:before {
+    content: "";
+    width: .35em;
+    height: .35em;
+    background-color: #39B0ED;
+    float: left;
+    margin: .45em .45em 0;
+    border-radius: 50%;
+}
 
 /* ABOUT */
 #contact-list {
