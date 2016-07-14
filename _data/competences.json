@@ -9,7 +9,7 @@ langages:
       value: 35
 
     - name: Python
-      value: 45
+      value: 50
 
     - name: Java
       value: 55
@@ -18,7 +18,7 @@ langages:
       value: 40
 
     - name: OpenGL / GLSL
-      value: 50
+      value: 40
 
 
 frameworks:
@@ -29,7 +29,7 @@ frameworks:
       value: 90
 
     - name: Django
-      value: 35
+      value: 45
 
     - name: Jekyll
       value: 55
@@ -49,4 +49,4 @@ divers:
       value: 30
 
     - name: Git
-      value: 60
+      value: 70
