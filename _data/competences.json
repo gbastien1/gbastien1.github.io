@@ -26,19 +26,19 @@ langages:
 
 frameworks:
     - name: jQuery 
-      value: 75
+      value: 80
 
     - name: Twitter Bootstrap
       value: 90
 
     - name: Django
-      value: 45
+      value: 50
 
     - name: Jekyll
       value: 55
 
     - name: AngularJS
-      value: 17
+      value: 22
 
     - name: NodeJS
       value: 15
@@ -52,7 +52,7 @@ divers:
       value: 40
 
     - name: Unity 5
-      value: 30
+      value: 48
 
     - name: Git
       value: 70
