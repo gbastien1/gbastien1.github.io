@@ -6,7 +6,7 @@ permalink: /realisations
 
 
 <div class="container animated fadeIn">
-<div id="projects-showcase" class="row">
+<div id="projects-showcase">
 
     <div class="col-lg-12">
         <h1>Mes réalisations</h1>
@@ -14,11 +14,11 @@ permalink: /realisations
     </div>
 
     {% for project in site.projects %}
-        <div class="col-sm-3 col-xs-6 project-image">
+        <div class="col-sm-3 col-xs-6 project-image realisation">
             <div class="thumbnail">
               <img src="{{site.url}}{{project.image}}" alt="project thumbnail">
               <div class="caption">
-                <h3>{{project.title}}</h3>
+                <h4>{{project.title}}</h4>
                 <p>{{project.mydate}}</p>
                 <p><a href="{{project.url}}" class="btn btn-default" role="button">Description</a></p>
               </div>
