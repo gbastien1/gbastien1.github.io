@@ -1,8 +1,13 @@
 /*Now the CSS*/
 * {margin: 0; padding: 0;}
-
+body {
+	position: relative;
+}
 .tree {
 	width: 3000px;
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 
 .tree ul {

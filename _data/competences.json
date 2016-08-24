@@ -5,11 +5,11 @@ langages:
     - name: Javascript
       value: 50
 
-    - name: SQL
-      value: 35
-
     - name: Python
       value: 50
+
+    - name: C#
+      value: 40
 
     - name: Java
       value: 55
@@ -19,6 +19,9 @@ langages:
 
     - name: OpenGL / GLSL
       value: 40
+
+    - name: SQL
+      value: 35
 
 
 frameworks:
@@ -36,6 +39,9 @@ frameworks:
 
     - name: AngularJS
       value: 17
+
+    - name: NodeJS
+      value: 15
       
 
 divers:
