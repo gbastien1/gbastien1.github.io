@@ -14,15 +14,15 @@ permalink: /realisations
     </div>
 
     {% for project in site.projects %}
-        <div class="col-sm-3 col-xs-6 project-image realisation">
+        <div class="col-sm-3 col-xs-6 project-image">
+            <a href="{{project.url}}" class="btn btn-default" role="button">
             <div class="thumbnail">
               <img src="{{site.url}}{{project.image}}" alt="project thumbnail">
               <div class="caption">
                 <h4>{{project.title}}</h4>
-                <p>{{project.mydate}}</p>
-                <p><a href="{{project.url}}" class="btn btn-default" role="button">Description</a></p>
               </div>
             </div>
+            </a>
         </div>
     {% endfor %}
     
