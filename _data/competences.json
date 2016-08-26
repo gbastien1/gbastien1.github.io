@@ -3,25 +3,25 @@ langages:
       value: 70
 
     - name: Javascript
-      value: 50
+      value: 53
 
     - name: Python
-      value: 50
+      value: 48
 
     - name: C#
-      value: 40
+      value: 38
 
     - name: Java
       value: 55
 
     - name: C++
-      value: 40
+      value: 42
 
     - name: OpenGL / GLSL
-      value: 40
+      value: 35
 
     - name: SQL
-      value: 35
+      value: 25
 
 
 frameworks:
@@ -35,7 +35,7 @@ frameworks:
       value: 50
 
     - name: Jekyll
-      value: 55
+      value: 46
 
     - name: AngularJS
       value: 22
