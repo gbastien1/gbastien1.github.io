@@ -24,6 +24,9 @@ permalink: /
                 <h3>Description</h3>
                 <p class="text-justify">{{project.content}}</p>
                 <p><strong style="color: #34B6EC;">Type:</strong> {{project.type}}</p>
+                {% if page.external-url != "" %}
+                <p><strong>Lien: </strong><a href="{{project.external-url}}">{{project.link-title}}</a></p>
+                {% endif %}
                 <hr>
                 <h4>Technologies utilisées</h4>
                 <ul id="techno-list">
@@ -48,10 +51,10 @@ permalink: /
                 <div class="col-sm-3 col-xs-6 project-image">
                     <a href="{{project.url}}" class="btn btn-default" role="button">
                     <div class="thumbnail">
-                      <img src="{{site.url}}{{project.image}}" alt="project thumbnail">
-                      <div class="caption">
-                        <h4>{{project.title}}</h4>
-                      </div>
+                        <img src="{{site.url}}{{project.image}}" alt="project thumbnail">
+                        <div class="caption">
+                            <h4>{{project.title}}</h4>
+                        </div>
                     </div>
                     </a>
                 </div>
