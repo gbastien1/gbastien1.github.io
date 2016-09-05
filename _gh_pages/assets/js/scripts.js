@@ -1,7 +1,7 @@
 $(".container").hide();
 $(document).ready(function() {
     $('.container').fadeIn();
-    equalHeight($('.realisation .thumbnail'));
+    //equalHeight($('#projects-showcase .project-image'));
 
 });
 

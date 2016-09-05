@@ -49,11 +49,11 @@ permalink: /
             {% for project in projects limit:5 %}
             {% if forloop.index != 1 %}
                 <div class="col-sm-3 col-xs-6 project-image">
-                    <a href="{{project.url}}" class="btn btn-default" role="button">
+                    <a href="{{project.url}}">
                     <div class="thumbnail">
                         <img src="{{site.url}}{{project.image}}" alt="project thumbnail">
                         <div class="caption">
-                            <h4>{{project.title}}</h4>
+                            <h4 class="project-title">{{project.title}}</h4>
                         </div>
                     </div>
                     </a>
