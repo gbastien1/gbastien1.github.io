@@ -1,0 +1,89 @@
+.slider-container {
+	position: relative;
+	max-width: 1200px;
+	margin: 0 auto;
+	height: 450px;
+	background: #242626;
+}
+.slider-container .slider {
+	height: 100%;
+	width: 100%;
+}
+.slider-container .slider .slides {
+	height: 100%;
+	width: 100%;
+}
+/* Use background images instead of img tags for easier styling */
+.slider-container .slider .slide {
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.slider-container .slider #slide1 {
+	background: url('../img/slide1.jpg');	
+}
+.slider-container .slider #slide2 {
+	background: url('../img/slide2.jpg');
+}
+.slider-container .slider #slide3 {
+	background: url('../img/slide3.jpg');
+}
+.slider-container .slider #slide4 {
+	background: url('../img/slide4.jpg');
+}
+/* position absolute so the div are on top of each other, allows fading between slides*/
+.slider-container .slider .slides div {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: inline-block;
+	display: none;
+	width: 100%;
+	height: 100%;
+}
+/* show only first slide first*/
+.slider-container .slider .slides div:first-child {
+	display: inline-block;
+}
+.slider-container .slider .arrow-container {
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	padding: 0 30px;
+	display: flex;
+	justify-content: space-between;
+}
+.slider-container .slider .arrow-container img {
+	cursor: pointer;
+}
+.slider-container .bullets {
+	position: absolute;
+	bottom: 10px;
+	left: 45%;
+}
+.slider-container .bullets label {
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+	width: 12px;
+	height: 12px;
+	margin: 0 4px;
+	background: #fff;
+}
+.slider-container .bullets label:first-child {
+	background-color: #f26122;
+}
+.slider-container .slider h1 {
+	position: absolute;
+	left: 10%;
+	top: 33%;
+	width: 40%;
+	font-family: 'Oswald', sans-serif;
+	font-weight: normal;
+	font-size: 2.5em;
+	line-height: 1.2em;
+	text-transform: uppercase;
+	color: white;
+}
+.slider-container .slider h1 .orange {
+	color: #f26223;
+}

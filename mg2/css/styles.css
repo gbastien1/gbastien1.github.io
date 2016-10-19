@@ -1,0 +1,23 @@
+/*
+font-family: 'Oswald', sans-serif;
+font-family: 'Arimo', sans-serif;
+ */
+* {
+    box-sizing: border-box;
+}
+html{
+    margin:0;
+    padding:0;
+    background-color:#EEE;
+}
+body{
+    font-family: 'Arimo', sans-serif;
+    font-size:1em;
+    margin:0;
+    padding:0;
+    color:#666;
+}
+#main-container {
+	max-width: 1200px;
+	margin: 0 auto;
+}
