@@ -19,10 +19,14 @@
 		font-size: 1em;
 	}
 	.info input[type="email"] {
-		width: 50%;
+		width: 45%;
+		padding: 7px;
+		font-size: 0.65em;
 	}
 	.info button {
-		width: 33%;
+		padding: 6px;
+		margin-left: 5px;
+		font-size: 0.65em;
 	}
 
 	/* FOOTER */

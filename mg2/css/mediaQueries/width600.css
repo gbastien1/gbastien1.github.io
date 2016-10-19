@@ -75,22 +75,20 @@
 	.info .info-text {
 		font-size: 0.85em;
 	}
-	.info input[type="email"] {
-		width: 55%;
-	}
-	.info button {
-		width: 33%;
+	.info #bottom-info-text {
+		margin-bottom: 0;
 	}
 	.info .bottom-info {
-		height: 240px;
+		height: 260px;
 		padding-top: 0;
 	}
 	.info .bottom-info .subscribe,
 	.info .bottom-info .follow-social {
 		width: 100%;
-		height: 120px;
+		height: 130px;
 		padding-top: 15px;
 		padding-left: 40px;
+		margin-bottom: 10px;
 	}
 	.info .bottom-info .subscribe .upper,
 	.info .bottom-info .follow-social .upper {
@@ -99,6 +97,16 @@
 	.info .bottom-info .subscribe .lower,
 	.info .bottom-info .follow-social .lower {
 		font-size: 2.7vw;
+	}
+	.info input[type="email"] {
+		width: 40%;
+		padding: 10px;
+		font-size: 0.75em;
+	}
+	.info button {
+		padding: 8px;
+		margin-left: 5px;
+		font-size: 0.85em;
 	}
 
 	/* FOOTER */

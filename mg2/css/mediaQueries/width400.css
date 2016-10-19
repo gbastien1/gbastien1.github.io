@@ -18,4 +18,13 @@
 	.info .info-text {
 		font-size: 0.78em;
 	}
+	.info .bottom-info {
+		height: 240px;
+	}
+	.info .bottom-info .subscribe,
+	.info .bottom-info .follow-social {
+		
+		height: 120px;
+		margin-bottom: 0;
+	}
 }
