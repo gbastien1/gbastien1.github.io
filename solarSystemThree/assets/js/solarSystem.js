@@ -109,7 +109,7 @@ function alterObjects(objects) {
 
 function createSkybox() {
 	var skyboxUrl = "assets/img/skybox/";
-	var urls = [skyboxUrl + "left.png", skyboxUrl + "right.png", skyboxUrl + "up.png", skyboxUrl + "down.png", skyboxUrl + "back.png", skyboxUrl + "front.png"];
+	var urls = [skyboxUrl + "Left.png", skyboxUrl + "Right.png", skyboxUrl + "Up.png", skyboxUrl + "Down.png", skyboxUrl + "Back.png", skyboxUrl + "Front.png"];
 	
 	var textureLoader = new THREE.TextureLoader();
 	var materialsArray = [];
