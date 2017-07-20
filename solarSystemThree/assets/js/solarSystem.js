@@ -188,7 +188,7 @@ function alterObjects(objects) {
 
 function createSkybox() {
 	var skyboxUrl = "assets/img/skybox/";
-	var urls = [skyboxUrl + "Left.png", skyboxUrl + "Right.png", skyboxUrl + "Up.png", skyboxUrl + "Down.png", skyboxUrl + "Front.png", skyboxUrl + "Back.png"];
+	var urls = [skyboxUrl + "Left.jpg", skyboxUrl + "Right.jpg", skyboxUrl + "Up.jpg", skyboxUrl + "Down.jpg", skyboxUrl + "Front.jpg", skyboxUrl + "Back.jpg"];
 	
 	
 	var materialsArray = [];
