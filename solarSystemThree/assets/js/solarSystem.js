@@ -1,6 +1,22 @@
 var scene, camera, renderer;
 var params;
 var mousedown = false;
+var textureLoader;
+
+function getParams() {
+	return {
+		sunRotSpeedy: 0.001,
+		earthRotSpeedY: 0.002,
+		venusRotSpeedY: 0.005,
+		jupiterRotSpeedY: 0.001,
+
+		earthOrbitSpeed: 0.002,
+		moonOrbitSpeedy: 0.003,
+		moonOrbitSpeedx: 0.0005,
+		venusOrbitSpeed: 0.001,
+		jupiterOrbitSpeed: 0.001
+	};
+}
 
 window.onload = function()  {
 	if (Detector.webgl) {
@@ -21,27 +37,51 @@ function init() {
 	// vertical angle of view, ratio, near, far
 	camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 5000);
 
+	textureLoader = new THREE.TextureLoader();
+
 	renderer = new THREE.WebGLRenderer();
 	renderer.setSize( window.innerWidth, window.innerHeight );
 	renderer.shadowMap.enabled = true;
 	renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 	document.body.appendChild( renderer.domElement );
 
-	camera.position.z = 30;
+	camera.position.z = 40;
 	camera.position.y = 20;
-	camera.rotation.x = -0.5;
+	//camera.rotation.x = -0.5;
+	camera.lookAt(new THREE.Vector3(0,0,0));
 }
 
 function createObjects() {
+	var parent = new THREE.Object3D();
+	scene.add(parent);
+
 	//SUN
+	var sunTexture = textureLoader.load("assets/img/textures/sunmap.jpg");
 	var geometry = new THREE.SphereGeometry( 5, 32, 32 );
-	var material = new THREE.MeshBasicMaterial( {color: 0xFFBC08} );
+	var material = new THREE.MeshBasicMaterial( {map: sunTexture} );
 	var sun = new THREE.Mesh( geometry, material );
+
+	var spriteMaterial = new THREE.SpriteMaterial( 
+	{ 
+		map: new THREE.ImageUtils.loadTexture( 'assets/img/textures/glow.png' ), 
+		useScreenCoordinates: false,
+		color: 0xF9DB64, transparent: false, blending: THREE.AdditiveBlending
+	});
+	var sprite = new THREE.Sprite( spriteMaterial );
+	sprite.scale.set(15, 15, 1.0);
+	sun.add(sprite);
 	scene.add( sun );
 
 	//EARTH
-	var geometry = new THREE.SphereGeometry( 2, 32, 32 );
-	var material = new THREE.MeshLambertMaterial( {color: 0x2255cc} );
+	var geometry = new THREE.SphereGeometry( 2.8, 32, 32 );
+
+	var earthTexture = textureLoader.load("assets/img/textures/earth.jpg");
+	var earthBumpMap = textureLoader.load('assets/img/textures/earthbump.jpg');
+	var earthSpecularMap = textureLoader.load('assets/img/textures/earthspec.jpg');
+	var material = new THREE.MeshPhongMaterial( {map: earthTexture, bumpMap: earthBumpMap, specularMap: earthSpecularMap} );
+	material.bumpScale = 0.05;
+	material.specular  = new THREE.Color('grey');
+
 	var earth = new THREE.Mesh( geometry, material );
 	earth.castShadow = true;
 	earth.receiveShadow = true;
@@ -51,21 +91,39 @@ function createObjects() {
 	scene.add(earthPivot);
 	earthPivot.add(earth);
 
-	//URANUS
-	var geometry = new THREE.SphereGeometry( 2.5, 32, 32 );
-	var material = new THREE.MeshLambertMaterial( {color: 0xF34747} );
-	var uranus = new THREE.Mesh( geometry, material );
-	uranus.castShadow = true;
-	uranus.receiveShadow = true;
-	scene.add( uranus );
+	//MOON
+	var geometry = new THREE.SphereGeometry( 0.6, 20, 20 );
+	var moonTexture = textureLoader.load("assets/img/textures/moonmap.jpg");
+	var moonBumpMap = textureLoader.load('assets/img/textures/moonbump.jpg');
+	var material = new THREE.MeshLambertMaterial( {map: moonTexture, bumpMap: moonBumpMap} );
+	material.bumpScale = 0.05;
+	var moon = new THREE.Mesh( geometry, material );
+	moon.castShadow = true;
+	moon.receiveShadow = true;
+	var moonPivot = new THREE.Object3D();
+	moonPivot.add(moon);
+	earth.add(moonPivot);
 
-	var uranusPivot = new THREE.Object3D();
-	scene.add(uranusPivot);
-	uranusPivot.add(uranus);
+	//VENUS
+	var geometry = new THREE.SphereGeometry( 2, 32, 32 );
+	var venusTexture = textureLoader.load("assets/img/textures/venusmap.jpg");
+	var venusBumpMap = textureLoader.load('assets/img/textures/venusbump.jpg');
+	var material = new THREE.MeshLambertMaterial( {map: venusTexture, bumpMap: venusBumpMap} );
+	material.bumpScale = 0.05;
+	var venus = new THREE.Mesh( geometry, material );
+	venus.castShadow = true;
+	venus.receiveShadow = true;
+	scene.add( venus );
+
+	var venusPivot = new THREE.Object3D();
+	scene.add(venusPivot);
+	venusPivot.add(venus);
+
 
 	//JUPITER
-	var geometry = new THREE.SphereGeometry( 4, 32, 32 );
-	var material = new THREE.MeshLambertMaterial( {color: 0xC5DF34} );
+	var geometry = new THREE.SphereGeometry( 4.2, 32, 32 );
+	var jupiterTexture = textureLoader.load("assets/img/textures/texture3.png");
+	var material = new THREE.MeshLambertMaterial( {map: jupiterTexture} );
 	var jupiter = new THREE.Mesh( geometry, material );
 	jupiter.castShadow = true;
 	jupiter.receiveShadow = true;
@@ -75,51 +133,70 @@ function createObjects() {
 	scene.add(jupiterPivot);
 	jupiterPivot.add(jupiter);
 
+
+
 	//LIGHTS
 	var ambientLight = new THREE.AmbientLight( 0x101010 );
 	scene.add(ambientLight);
 	var sunLight = new THREE.PointLight( 0xffffcc, 1, 100, 2);
 	sunLight.castShadow = true;
 	sunLight.position.set(0, 0, 0);
-
 	scene.add( sunLight );
 
 	//SKYBOX
 	createSkybox();
 
+	/*//SNIPER
+	var colladaLoader = new THREE.ColladaLoader();
+	var sniper;
+	colladaLoader.load('assets/models/sniper.dae', function(collada) {
+		sniper = collada.scene;
+		sniper.position.y = 15;
+		sniper.rotation.x = -1 * Math.PI / 2;
+		scene.add(sniper);
+	}, 
+	function ( xhr ) {
+		console.log( (xhr.loaded / xhr.total * 100) + '% loaded' );
+	});*/
+
 
 	return {
 		sun: sun,
 		earth: earth,
-		uranus: uranus,
+		moon: moon,
+		venus: venus,
 		jupiter: jupiter,
 
 		earthPivot: earthPivot,
-		uranusPivot: uranusPivot,
+		moonPivot: moonPivot,
+		venusPivot: venusPivot,
 		jupiterPivot: jupiterPivot
 	};
 }
 
 function alterObjects(objects) {
 	//starting positions
-	objects.earth.position.x = 9;
-	objects.uranus.position.x = 15;
-	objects.jupiter.position.x = 25;
+	objects.earth.position.x = 22;
+	objects.venus.position.x = 14;
+	objects.jupiter.position.x = 35;
+	objects.moon.position.x = 5;
+
+	objects.earthPivot.rotation.y = Math.random() * 2 * Math.PI;
+	objects.venusPivot.rotation.y = Math.random() * 2 * Math.PI;
+	objects.jupiterPivot.rotation.y = Math.random() * 2 * Math.PI;
 }
 
 function createSkybox() {
 	var skyboxUrl = "assets/img/skybox/";
-	var urls = [skyboxUrl + "Left.png", skyboxUrl + "Right.png", skyboxUrl + "Up.png", skyboxUrl + "Down.png", skyboxUrl + "Back.png", skyboxUrl + "Front.png"];
+	var urls = [skyboxUrl + "Left.png", skyboxUrl + "Right.png", skyboxUrl + "Up.png", skyboxUrl + "Down.png", skyboxUrl + "Front.png", skyboxUrl + "Back.png"];
 	
-	var textureLoader = new THREE.TextureLoader();
+	
 	var materialsArray = [];
 	for (var k in urls) {
 		var url = urls[k];
-		var loader = textureLoader.load(url, function(texture) {
-			materialsArray.push(new THREE.MeshBasicMaterial({map: texture, side: THREE.BackSide}));
-		});
+		materialsArray.push(new THREE.MeshBasicMaterial({map: textureLoader.load(url), side: THREE.BackSide}));
 	}
-	skyboxMesh = new THREE.Mesh(new THREE.CubeGeometry( 1000, 1000, 1000, 1, 1, 1), materialsArray);
+	skyboxMesh = new THREE.Mesh(new THREE.CubeGeometry( 5000, 5000, 5000, 1, 1, 1), materialsArray);
 	scene.add(skyboxMesh);
 }
 
@@ -129,29 +206,20 @@ function render(objects) {
 
 		objects.sun.rotation.y += params.sunRotSpeedy;
 		objects.earth.rotation.y += params.earthRotSpeedY;
-		objects.uranus.rotation.y += params.uranusRotSpeedY;
+		objects.venus.rotation.y += params.venusRotSpeedY;
 		objects.jupiter.rotation.y += params.jupiterRotSpeedY;
 
 		objects.earthPivot.rotation.y += params.earthOrbitSpeed;
-		objects.uranusPivot.rotation.y += params.uranusOrbitSpeed;
+		objects.venusPivot.rotation.y += params.venusOrbitSpeed;
 		objects.jupiterPivot.rotation.y += params.jupiterOrbitSpeed;
+		objects.moonPivot.rotation.y += params.moonOrbitSpeedy;
+		objects.moonPivot.rotation.x += params.moonOrbitSpeedx;
 
+		TWEEN.update();
+		
 		renderer.render(scene, camera);
 	}
 	animate();
-}
-
-function getParams() {
-	return {
-		sunRotSpeedy: 0.001,
-		earthRotSpeedY: 0.015,
-		uranusRotSpeedY: 0.02,
-		jupiterRotSpeedY: 0.001,
-
-		earthOrbitSpeed: 0.01,
-		uranusOrbitSpeed: 0.005,
-		jupiterOrbitSpeed: 0.001
-	};
 }
 
 /**
@@ -167,17 +235,24 @@ function addListeners() {
 }
 
 function cameraZoom(event) {
+	var target;
+	var position = camera.position.z;
+
 	// zoom out
     if(event.wheelDelta > 0) {
         if(camera.position.z < 1000) {
-            camera.position.z -= 5; 
+        	target = position - 5;
         }
 	}
 	else if (event.wheelDelta < 0) {
 		if (camera.position.z > 0.1) {
-	        camera.position.z += 5;
+			target = position + 5;
 	    }
 	}
+	cameraTween = new TWEEN.Tween(camera.position)
+                .to({ z: target} , 300)
+                .easing(TWEEN.Easing.Quadratic.InOut)
+                .start();
 }
 
 function onMouseDrag(event) {
