@@ -43,14 +43,13 @@ function createObjects() {
 	var sun;
 	var fox;
 
-	/*var loader = new THREE.ObjectLoader();
-    loader.load('./assets/fox.json', function(geometry) {
-        //fox = new THREE.Mesh(geometry);
-        scene.add(geometry);
-    });*/
+	var loader = new THREE.ObjectLoader();
+    loader.load('./assets/fox.json', function(fox) {
+        scene.add(fox);
+    });
 
 	//SUN
-	var geometry = new THREE.SphereGeometry( 5, 32, 32 );
+	/*var geometry = new THREE.SphereGeometry( 5, 32, 32 );
 	var material = new THREE.MeshLambertMaterial( {color: 0xFDCD3B} );
 	var sun = new THREE.Mesh( geometry, material );
 	scene.add( sun );
@@ -61,12 +60,11 @@ function createObjects() {
 	var sunLight = new THREE.PointLight( 0xffffcc, 1, 100, 2);
 	sunLight.castShadow = true;
 	sunLight.position.set(0, 10, 0);
-	scene.add( sunLight );
+	scene.add( sunLight );*/
 
 
 	return {
-		sun: sun,
-		fox: fox
+		sun: sun
 	};
 }
 
