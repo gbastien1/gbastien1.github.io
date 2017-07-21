@@ -63,8 +63,7 @@ function createObjects() {
 
 	var spriteMaterial = new THREE.SpriteMaterial( 
 	{ 
-		map: new THREE.ImageUtils.loadTexture( 'assets/img/textures/glow.png' ), 
-		useScreenCoordinates: false,
+		map: new textureLoader( 'assets/img/textures/glow.png' ),
 		color: 0xF9DB64, transparent: false, blending: THREE.AdditiveBlending
 	});
 	var sprite = new THREE.Sprite( spriteMaterial );
@@ -107,8 +106,7 @@ function createObjects() {
 	//VENUS
 	var geometry = new THREE.SphereGeometry( 2, 32, 32 );
 	var venusTexture = textureLoader.load("assets/img/textures/venusmap.jpg");
-	var venusBumpMap = textureLoader.load('assets/img/textures/venusbump.jpg');
-	var material = new THREE.MeshLambertMaterial( {map: venusTexture, bumpMap: venusBumpMap} );
+	var material = new THREE.MeshLambertMaterial( {map: venusTexture} );
 	material.bumpScale = 0.05;
 	var venus = new THREE.Mesh( geometry, material );
 	venus.castShadow = true;
