@@ -1,3 +1,4 @@
+var isLooping = true;
 var scene, camera, renderer;
 var params;
 var mousedown = false;
@@ -235,23 +236,28 @@ function createSkybox() {
 }
 
 function render(objects) {
+
 	function animate() {
 		requestAnimationFrame(animate);
 
-		objects.sun.rotation.y += params.sunRotSpeedy;
-		objects.earth.rotation.y += params.earthRotSpeedY;
-		objects.venus.rotation.y += params.venusRotSpeedY;
-		objects.jupiter.rotation.y += params.jupiterRotSpeedY;
+		if (isLooping) {
+			objects.sun.rotation.y += params.sunRotSpeedy;
+			objects.earth.rotation.y += params.earthRotSpeedY;
+			objects.venus.rotation.y += params.venusRotSpeedY;
+			objects.jupiter.rotation.y += params.jupiterRotSpeedY;
 
-		objects.earthPivot.rotation.y += params.earthOrbitSpeed;
-		objects.venusPivot.rotation.y += params.venusOrbitSpeed;
-		objects.jupiterPivot.rotation.y += params.jupiterOrbitSpeed;
-		objects.moonPivot.rotation.y += params.moonOrbitSpeedy;
-		objects.moonPivot.rotation.x += params.moonOrbitSpeedx;
+			objects.earthPivot.rotation.y += params.earthOrbitSpeed;
+			objects.venusPivot.rotation.y += params.venusOrbitSpeed;
+			objects.jupiterPivot.rotation.y += params.jupiterOrbitSpeed;
+			objects.moonPivot.rotation.y += params.moonOrbitSpeedy;
+			objects.moonPivot.rotation.x += params.moonOrbitSpeedx;
 
-		TWEEN.update();
+			TWEEN.update();
+		}
+		
 		
 		renderer.render(scene, camera);
+		
 	}
 	animate();
 }
@@ -266,6 +272,7 @@ function addListeners() {
 	document.body.addEventListener('mousedown', onMouseDown, false);
 	document.body.addEventListener('mousemove', onMouseDrag, false);
 	document.body.addEventListener('mouseup', onMouseUp, false);
+	document.body.addEventListener('keypress', onKeyPress, false);
 }
 
 function cameraZoom(event) {
@@ -307,7 +314,7 @@ function onMouseUp() {
 	mousedown = false;
 }
 
-// taken from https://threejs.org/examples/canvas_interactive_cubes.html
+// inspired from https://threejs.org/examples/canvas_interactive_cubes.html
 function onDocumentMouseDown( event ) {
 
 	event.preventDefault();
@@ -334,9 +341,18 @@ function onDocumentMouseDown( event ) {
 		}
 
 	} else {
-		THREE.SceneUtils.detach( camera, camera.parent, scene );
-		camera.position.z = 40;
-		camera.position.y = 20;
-		camera.lookAt(new THREE.Vector3(0,0,0));
+		if (camera.parent) {
+			THREE.SceneUtils.detach( camera, camera.parent, scene );
+			camera.position.z = 40;
+			camera.position.y = 20;
+			camera.lookAt(new THREE.Vector3(0,0,0));
+		}
+	}
+}
+
+
+function onKeyPress(event) {
+	if (event.keyCode === 32) {
+		isLooping = !isLooping;
 	}
 }
