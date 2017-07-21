@@ -2,6 +2,14 @@ var scene, camera, renderer;
 var params;
 var mousedown = false;
 var textureLoader;
+var mouse;
+var raycaster;
+var objectsArray = [];
+var audioListener;
+var audioLoader;
+var bongSound;
+var bingSound;
+var lastPlayed = 0;
 
 function getParams() {
 	return {
@@ -49,6 +57,12 @@ function init() {
 	camera.position.y = 20;
 	//camera.rotation.x = -0.5;
 	camera.lookAt(new THREE.Vector3(0,0,0));
+
+	raycaster = new THREE.Raycaster();
+	mouse = new THREE.Vector2();
+
+	audioListener = new THREE.AudioListener();
+	camera.add( audioListener );
 }
 
 function createObjects() {
@@ -60,16 +74,18 @@ function createObjects() {
 	var geometry = new THREE.SphereGeometry( 5, 32, 32 );
 	var material = new THREE.MeshBasicMaterial( {map: sunTexture} );
 	var sun = new THREE.Mesh( geometry, material );
+	sun.name = "sun";
 
 	var spriteMaterial = new THREE.SpriteMaterial( 
 	{ 
-		map: new textureLoader( 'assets/img/textures/glow.png' ),
+		map: textureLoader.load( 'assets/img/textures/glow.png' ),
 		color: 0xF9DB64, transparent: false, blending: THREE.AdditiveBlending
 	});
 	var sprite = new THREE.Sprite( spriteMaterial );
 	sprite.scale.set(15, 15, 1.0);
 	sun.add(sprite);
 	scene.add( sun );
+	objectsArray.push(sun);
 
 	//EARTH
 	var geometry = new THREE.SphereGeometry( 2.8, 32, 32 );
@@ -82,6 +98,7 @@ function createObjects() {
 	material.specular  = new THREE.Color('grey');
 
 	var earth = new THREE.Mesh( geometry, material );
+	earth.name = "earth";
 	earth.castShadow = true;
 	earth.receiveShadow = true;
 	scene.add( earth );
@@ -89,6 +106,8 @@ function createObjects() {
 	var earthPivot = new THREE.Object3D();
 	scene.add(earthPivot);
 	earthPivot.add(earth);
+	objectsArray.push(earth);
+	objectsArray.push(earthPivot);
 
 	//MOON
 	var geometry = new THREE.SphereGeometry( 0.6, 20, 20 );
@@ -97,11 +116,14 @@ function createObjects() {
 	var material = new THREE.MeshLambertMaterial( {map: moonTexture, bumpMap: moonBumpMap} );
 	material.bumpScale = 0.05;
 	var moon = new THREE.Mesh( geometry, material );
+	moon.name = "moon";
 	moon.castShadow = true;
 	moon.receiveShadow = true;
 	var moonPivot = new THREE.Object3D();
 	moonPivot.add(moon);
 	earth.add(moonPivot);
+	objectsArray.push(moon);
+	objectsArray.push(moonPivot);
 
 	//VENUS
 	var geometry = new THREE.SphereGeometry( 2, 32, 32 );
@@ -109,6 +131,7 @@ function createObjects() {
 	var material = new THREE.MeshLambertMaterial( {map: venusTexture} );
 	material.bumpScale = 0.05;
 	var venus = new THREE.Mesh( geometry, material );
+	venus.name = "venus";
 	venus.castShadow = true;
 	venus.receiveShadow = true;
 	scene.add( venus );
@@ -116,6 +139,8 @@ function createObjects() {
 	var venusPivot = new THREE.Object3D();
 	scene.add(venusPivot);
 	venusPivot.add(venus);
+	objectsArray.push(venus);
+	objectsArray.push(venusPivot);
 
 
 	//JUPITER
@@ -123,6 +148,7 @@ function createObjects() {
 	var jupiterTexture = textureLoader.load("assets/img/textures/texture3.png");
 	var material = new THREE.MeshLambertMaterial( {map: jupiterTexture} );
 	var jupiter = new THREE.Mesh( geometry, material );
+	jupiter.name = "jupiter";
 	jupiter.castShadow = true;
 	jupiter.receiveShadow = true;
 	scene.add( jupiter );
@@ -130,7 +156,8 @@ function createObjects() {
 	var jupiterPivot = new THREE.Object3D();
 	scene.add(jupiterPivot);
 	jupiterPivot.add(jupiter);
-
+	objectsArray.push(jupiter);
+	objectsArray.push(jupiterPivot);
 
 
 	//LIGHTS
@@ -141,21 +168,30 @@ function createObjects() {
 	sunLight.position.set(0, 0, 0);
 	scene.add( sunLight );
 
+
 	//SKYBOX
 	createSkybox();
 
-	/*//SNIPER
-	var colladaLoader = new THREE.ColladaLoader();
-	var sniper;
-	colladaLoader.load('assets/models/sniper.dae', function(collada) {
-		sniper = collada.scene;
-		sniper.position.y = 15;
-		sniper.rotation.x = -1 * Math.PI / 2;
-		scene.add(sniper);
-	}, 
-	function ( xhr ) {
-		console.log( (xhr.loaded / xhr.total * 100) + '% loaded' );
-	});*/
+	// Audio
+	bongSound = new THREE.Audio( audioListener );
+	scene.add( bongSound );
+	audioLoader = new THREE.AudioLoader();
+	audioLoader.load(
+	'assets/sounds/bong-trump.ogg',
+	function ( audioBuffer ) {
+		// set the audio object buffer to the loaded object
+		bongSound.setBuffer( audioBuffer );
+	});
+
+	bingSound = new THREE.Audio( audioListener );
+	scene.add( bingSound );
+	audioLoader = new THREE.AudioLoader();
+	audioLoader.load(
+	'assets/sounds/bing-trump.ogg',
+	function ( audioBuffer ) {
+		// set the audio object buffer to the loaded object
+		bingSound.setBuffer( audioBuffer );
+	});
 
 
 	return {
@@ -238,14 +274,14 @@ function cameraZoom(event) {
 
 	// zoom out
     if(event.wheelDelta > 0) {
-        if(camera.position.z < 1000) {
+        //if(camera.position.z < 1000) {
         	target = position - 5;
-        }
+        //}
 	}
 	else if (event.wheelDelta < 0) {
-		if (camera.position.z > 0.1) {
+		//if (camera.position.z > 0.1) {
 			target = position + 5;
-	    }
+	    //}
 	}
 	cameraTween = new TWEEN.Tween(camera.position)
                 .to({ z: target} , 300)
@@ -264,10 +300,43 @@ function onMouseDrag(event) {
 
 function onMouseDown(event) {
 	mousedown = true;
+
+	onDocumentMouseDown(event);
 }
 function onMouseUp() {
 	mousedown = false;
 }
 
+// taken from https://threejs.org/examples/canvas_interactive_cubes.html
+function onDocumentMouseDown( event ) {
 
+	event.preventDefault();
 
+	mouse.x = ( event.clientX / renderer.domElement.clientWidth ) * 2 - 1;
+	mouse.y = - ( event.clientY / renderer.domElement.clientHeight ) * 2 + 1;
+
+	raycaster.setFromCamera( mouse, camera );
+
+	var intersects = raycaster.intersectObjects( objectsArray );
+
+	if ( intersects.length > 0 ) {
+		var clickedObj = intersects[0].object;
+
+		console.log(clickedObj);
+
+		clickedObj.add(camera);
+		if (lastPlayed === 0) {
+			bingSound.play();
+			lastPlayed = 1;
+		} else  {
+			bongSound.play();
+			lastPlayed = 0;
+		}
+
+	} else {
+		THREE.SceneUtils.detach( camera, camera.parent, scene );
+		camera.position.z = 40;
+		camera.position.y = 20;
+		camera.lookAt(new THREE.Vector3(0,0,0));
+	}
+}
