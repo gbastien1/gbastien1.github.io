@@ -330,19 +330,23 @@ function onDocumentMouseDown( event ) {
 	if ( intersects.length > 0 && intersects[0].object.name !== "skybox") {
 		var clickedObj = intersects[0].object;
 
-		console.log(clickedObj);
-
 		clickedObj.add(camera);
 		if (lastPlayed === 0) {
+			if (bingSound.isPlaying) {
+				bingSound.stop();
+			}
 			bingSound.play();
 			lastPlayed = 1;
 		} else  {
+			if (bongSound.isPlaying) {
+				bongSound.stop();
+			}
 			bongSound.play();
 			lastPlayed = 0;
 		}
 
 	} else {
-		if (camera.parent) {
+		if (camera.parent && camera.parent.type !== "Scene") {
 			THREE.SceneUtils.detach( camera, camera.parent, scene );
 			camera.position.z = 40;
 			camera.position.y = 20;
