@@ -232,6 +232,7 @@ function createSkybox() {
 		materialsArray.push(new THREE.MeshBasicMaterial({map: textureLoader.load(url), side: THREE.BackSide}));
 	}
 	skyboxMesh = new THREE.Mesh(new THREE.CubeGeometry( 5000, 5000, 5000, 1, 1, 1), materialsArray);
+	skyboxMesh.name = "skybox";
 	scene.add(skyboxMesh);
 }
 
@@ -326,7 +327,7 @@ function onDocumentMouseDown( event ) {
 
 	var intersects = raycaster.intersectObjects( objectsArray );
 
-	if ( intersects.length > 0 ) {
+	if ( intersects.length > 0 && intersects[0].object.name !== "skybox") {
 		var clickedObj = intersects[0].object;
 
 		console.log(clickedObj);
