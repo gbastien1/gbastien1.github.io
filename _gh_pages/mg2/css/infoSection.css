@@ -1,0 +1,72 @@
+.info {
+	position: relative;
+	width: 100%;
+	height: 350px;
+	background-color: #f26223;
+	color: white;
+	padding: 40px 80px;
+}
+.info .info-text {	
+	font-weight: bold;
+	font-size: 1.1em;
+	letter-spacing: 1px;
+	margin: 0;
+	margin-bottom: 20px;
+}
+.info .bottom-info {
+	width: 100%;
+	height: 50%;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+.info .bottom-info .subscribe,
+.info .bottom-info .follow-social {
+	width: 50%;
+	height: 100%;
+	padding-top: 15px;
+	float: left;
+	font-family: 'Oswald', sans-serif;
+	text-transform: uppercase;
+}
+.info .bottom-info .subscribe {
+	padding-left: 80px;
+}
+.info .bottom-info .follow-social {
+	padding-left: 30px;
+	background: white;
+	color: #f26223;
+}
+.info .bottom-info .follow-social img {
+	cursor: pointer;
+}
+.info .bottom-info .subscribe .upper,
+.info .bottom-info .follow-social .upper {
+	font-size: 2.8em;
+	margin: 0;
+}
+.info .bottom-info .subscribe .lower,
+.info .bottom-info .follow-social .lower {
+	font-size: 1.2em;
+	margin-top: -10px;
+	margin-bottom: 10px;
+	color: #333333;
+}
+
+.info input[type="email"] {
+	width: 40%;
+	padding: 10px;
+	border: 0;
+	font-size: 0.75em;
+}
+.info button {
+	display: inline-block;
+	padding: 8px;
+	margin-left: 5px;
+	border: 1px solid white;
+	background: none;
+	color: white;
+	text-transform: uppercase;
+	font-weight: bold;
+	cursor: pointer;
+}

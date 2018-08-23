@@ -1,0 +1,10 @@
+{
+    "name": "Solar System Three",
+    "preferGlobal": true,
+    "version": "0.0.1",
+    "author": "Gabrielle Bastien",
+    "description": "A simple solar system made with three.js",
+    "scripts": {
+        "build": "uglify assets/js/*.js > assets/dist/script.min.js"
+    }
+}

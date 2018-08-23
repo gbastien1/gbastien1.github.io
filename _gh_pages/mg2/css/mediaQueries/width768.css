@@ -1,0 +1,59 @@
+@media screen and (max-width: 768px) {
+	/* NAVIGATION */
+	nav {
+		text-align: center;
+	}
+	nav>ul>li {
+		margin: 5px 0;
+	}
+	/* SLIDER SECTION */
+	.slider-container .slider h1 {
+		top: 30%;
+		left: 12.5%;
+		width: 55%;
+		font-size: 5vw;
+	}
+
+	/* INFO SECTION */
+	.info .info-text {
+		font-size: 1em;
+	}
+	.info input[type="email"] {
+		width: 45%;
+		padding: 7px;
+		font-size: 0.65em;
+	}
+	.info button {
+		padding: 6px;
+		margin-left: 5px;
+		font-size: 0.65em;
+	}
+
+	/* FOOTER */
+	footer {
+		height: 200px;
+	}
+	footer .contact-links {
+		font-size: 0.7em;
+	}
+	footer .contact-links div .img {
+		background-size: 120px auto;
+	}
+	footer .contact-links .address .img {
+		width: 30px;
+		margin-top: 10px;
+	}
+	footer .contact-links .phone .img {
+		width: 44px;
+		margin-top: -10px;
+		background-position-x: -30px;
+	}
+	footer .contact-links .email .img {
+		width: 60px;
+		margin-top: -5px;
+		background-position-x: -72px;
+	}
+	footer .copyright {
+		font-size: 0.75em;
+	}
+}

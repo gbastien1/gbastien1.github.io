@@ -1,0 +1,12 @@
+@media screen and (max-width: 320px) {
+	.info .bottom-info .subscribe .upper,
+	.info .bottom-info .follow-social .upper {
+		font-size: 7.5vw;
+	}
+	.info .bottom-info .subscribe .lower,
+	.info .bottom-info .follow-social .lower {
+		font-size: 4.5vw;
+		margin-top: -5px;
+		margin-bottom: 10px;
+	}
+}

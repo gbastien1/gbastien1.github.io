@@ -1,0 +1,30 @@
+@media screen and (max-width: 400px) {
+	.slider-container .slider h1 {
+		top: 44%;
+		left: 17%;
+		font-size: 7vw;
+	}
+	.slider-container .slider .arrow-container {
+		padding: 0 15px;
+	}
+	.slider-container .bullets {
+		left: 35%;
+	}
+
+	.info {
+		padding: 30px 30px;
+		height: 410px;
+	}
+	.info .info-text {
+		font-size: 0.78em;
+	}
+	.info .bottom-info {
+		height: 240px;
+	}
+	.info .bottom-info .subscribe,
+	.info .bottom-info .follow-social {
+		
+		height: 120px;
+		margin-bottom: 0;
+	}
+}

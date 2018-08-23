@@ -1,0 +1,20 @@
+@media screen and (max-width: 1170px) {
+	/* HEADER */
+    header .container {
+        padding: 0 40px;
+    }
+    /* SLIDER SECTION */
+    .slider-container {
+		height: 400px;
+	}
+	/* INFO SECTION */
+	.info .bottom-info .subscribe .upper,
+	.info .bottom-info .follow-social .upper {
+		font-size: 4.5vw;
+	}
+	.info .bottom-info .subscribe .lower,
+	.info .bottom-info .follow-social .lower {
+		font-size: 1.6vw;
+		margin-top: -5px;
+	}
+}
