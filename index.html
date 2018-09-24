@@ -1,66 +1,28 @@
 ---
 layout: default
-title: Gabrielle-Bastien
+title: Gabrielle Bastien - Développeuse web front-end
 permalink: /
 ---
-    <div class="container animated fadeIn">
-        {% assign projects = site.projects | sort: 'mydate' | reverse %}
-        {% for project in projects limit:1 %}
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">Dernier projet
-                    <small>{{project.title}}</small>
-                </h1>
-            </div>
+
+<section class="main-content index site-centerer" id="index-main-content-section">
+    <div class="index-text-ctn">
+        <div class="title-ctn">
+            <h1 class="title">Gabrielle Bastien</h1>
+            <span class="initials">GB</span>
         </div>
-        <div class="row">
-            <div class="col-md-7">
-                <a href="{{project.url}}">
-                    <img id="recent_img" class="img-responsive animated bounceInLeft" src="{{site.url}}{{project.image}}" alt="most recent project image">
+        <div class="subtitle-ctn">
+            <p class="subtitle">Développeuse front-end web professionnelle</p>
+        </div>
+    </div>
+    <div class="social-ctn">
+        {% for c in site.data.social %}
+            <div class="social-icon-ctn">
+                <a href="{{c.link}}">
+                    <img src="/assets/img/social/{{c.handle}}.svg" alt="{{c.title}}" />
                 </a>
             </div>
-
-            <div class="col-md-4">
-                <h3>Description</h3>
-                <p class="text-justify">{{project.content}}</p>
-                <p><strong style="color: #34B6EC;">Type:</strong> {{project.type}}</p>
-                {% if page.external-url != "" %}
-                <p><strong>Lien: </strong><a href="{{project.external-url}}">{{project.link-title}}</a></p>
-                {% endif %}
-                <hr>
-                <h4>Technologies utilisées</h4>
-                <ul id="techno-list">
-                {% for t in project.Technologies %}
-                    <li>{{t}}</li>
-                {% endfor %}
-                </ul>
-            </div>
-        </div>
         {% endfor %}
-        
-        
-        
-        <div id="projects-showcase" class="row">
+    </div>
+</section>
 
-            <div class="col-lg-12">
-                <h3 class="page-header">Projets pr&eacute;c&eacute;dents</h3>
-            </div>
-
-            {% for project in projects limit:5 %}
-            {% if forloop.index != 1 %}
-                <div class="col-sm-3 col-xs-6 project-image">
-                    <a href="{{project.url}}">
-                    <div class="thumbnail">
-                        <img src="{{site.url}}{{project.image}}" alt="project thumbnail">
-                        <div class="caption">
-                            <h4 class="project-title">{{project.title}}</h4>
-                        </div>
-                    </div>
-                    </a>
-                </div>
-            {% endif %}
-            {% endfor %}
-            
-
-        </div>
-        <br /><a class="pull-right" href="{{site.url}}/realisations.html">Voir tous les projets</a> <br />
+<div id="particles-container"></div>

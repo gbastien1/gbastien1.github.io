@@ -1,101 +1,62 @@
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<title>Gabrielle Bastien</title>
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Gabrielle Bastien</title>
 
-	<!--scripts-->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="/assets/js/scripts.js"></script>
+    <!--scripts-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js"></script>
 
-	<!--CSS-->
-	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">-->
-	<link rel="stylesheet" href="/assets/lib/bootstrap.min.css">
-	<link rel="stylesheet" href="/assets/css/animate.css">
-	<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
-	
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+
 </head>
 
-
-
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" id="hamburger" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="glyphicon glyphicon-menu-hamburger"></span>
-      </button>
-      <a class="navbar-brand" href="/"><strong>Gabrielle</strong></a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="nav_item"><a href="/a-propos.html">À propos</a></li>
-        <li class="nav_item"><a class="page-link" href="/cv.html">CV</a></li>
-        <li class="nav_item"><a href="/realisations.html">Réalisations</a></li>
-      </ul>
-
-      <!--<ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Langue <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li class="nav_item"><a href="">Français</a></li>
-            <li class="nav_item"><a href="">Anglais</a></li>
-          </ul>
-        </li>
-      </ul>-->
-
-    </div><!-- /.navbar-collapse -->
-
-  </div><!-- /.container-fluid -->
-</nav>
-
-<div class="container animated fadeIn">
-
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">Gabrielle Bastien
-                    <small>Programmeuse web</small>
-                </h1>
-            </div>
+    <body>
+        <div class="site-container">
+            <div class="header-wave-ctn">
+    <svg id="svg-header-wave" xmlns="http://www.w3.org/2000/svg" width="1599.801" height="135.964" viewBox="0 0 1599.801 135.964" preserveAspectRatio="none">
+    <path id="svg-path-wave" d="M0,135.945c95.067,2.038,406.964-158.501,535.997-66.953c128.329,91.047,513.206,72.635,1063.804-67.917V0H0V135.945z" />
+    <path id="svg-path-full" d="M0,135.945l543.067,0.02h1056.731V0H0V135.945z" />
+</svg>
+</div>
+<header class="site-header">
+    <div class="site-header-inner site-centerer">
+        <div class="menu-btn-ctn">
+            <button type="button" class="header-menu-btn">
+                <span class="first"></span>
+                <span class="second"></span>
+                <span class="third"></span>
+            </button>
         </div>
-        
+    </div>
+    <div class="menu-ctn">
+        <div class="menu-item-ctn">
+            <a class="menu-item">Qui suis-je?</a>
+        </div>
+        <div class="menu-item-ctn">
+            <a class="menu-item">Mes réalisations web</a>
+        </div>
+        <div class="menu-item-ctn">
+            <a class="menu-item">Autres projets</a>
+        </div>
+        <div class="menu-item-ctn">
+            <a class="menu-item">Comment me joindre?</a>
+        </div>
+    </div>
+</header>
 
-        <div class="row">
+            <section class="main-content a-propos site-centerer" id="a-propos-main-content-section">
+    <h1>À propos</h1>
+</section>
 
-            <div class="col-lg-4 col-md-4 col-xs-10 col-xs-offset-1">
-                <img id="logo-about" class="img-responsive" src="/assets/img/moi_vectoriel.svg" alt="Vector picture of me">
-            </div>
-
-            <div id="presentation-txt" class="col-lg-6 col-md-8 col-sm-8">
-                <h3>Un peu sur moi</h3>
-                <p class="text-justify">Je suis nouvellement finissante au Baccalauréat en informatique de l'UQAC. Mon expérience s'est pour l'instant dirigée vers les langages de base comme <strong>HTML</strong>, <strong>CSS</strong> et <strong>Javascript</strong>, puis vers certains frameworks web comme <strong>jQuery</strong>, <strong>Twitter Bootstrap</strong> et <strong>Django</strong>. Ceci dit, mon but est de poursuivre mes apprentissages vers le langage Javascript et ses librairies et frameworks les plus utilisés comme <strong>AngularJS</strong> et <strong>React</strong>. Javascript étant le langage web de base, il m'est important de mieux le connaître. Je réalise dernièrement des petits projets avec Angular dans le but de me familiariser avec ce framework. Je reste toutefois intéressée par la programmation de jeux vidéos en <strong>C#</strong> avec <strong>Unity 5</strong>. Je réalise donc aussi certains projets dans ce domaine.</p>
-                <strong><p>Je suis présentement en rechercne d'emploi dans le domaine du web front-end, mais «fullstack» me convient aussi.</p></strong>
-                <h3>Informations de contact</h3>
-                <ul id="contact-list">
-                    <li><span class="glyphicon glyphicon-envelope"></span> Courriel: <a href="mailto:gabrielle.bastien1@gmail.com" target="_top">gabrielle.bastien1@gmail.com</a></li>
-                    <li><img class="contact-icon" src="/assets/img/linkedin.svg"> LinkedIn: <a href="https://ca.linkedin.com/in/gabrielle-bastien-829400104">ca.linkedin.com</a></li>
-                    <li> <img class="contact-icon" src="/assets/img/github.svg"> Github: <a href="https://www.github.com/gbastien1">github.com/gbastien1</a></li>
-                </ul>
-            </div>
+            <footer></footer>
         </div>
 
-
-        <hr>
-
-        <!-- Footer -->
-        <footer>
-            <div class="row">
-                <div class="col-lg-11">
-                    <br />
-                    <p> Gabrielle Bastien 2016 &copy; <small>Bootstrap & Jekyll</small></p>
-                </div>
-            </div>
-            <!-- /.row -->
-        </footer>
-
-    </div>
-    <!-- /.container -->
-    
+        <script type="text/javascript" src="/assets/js/lib/particles.min.js"></script>
+        <script type="text/javascript" src="/assets/js/index.js"></script>
+        <script type="text/javascript" src="/assets/js/modules/header.js"></script>
+    </body>
+</html>

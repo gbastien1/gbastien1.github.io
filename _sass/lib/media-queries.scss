@@ -1,0 +1,33 @@
+$screen-iip: 400px;
+$screen-ip: 480px;
+$screen-ph: 600px;
+$screen-xs: 768px;
+$screen-900: 900px;
+$screen-sm: 1024px;
+$screen-md: 1280px;
+$screen-lg: 1440px;
+$screen-xl: 1600px;
+
+@mixin mq-max-width($screen-size) {
+  @media (max-width: #{$screen-size - 1px}) {
+    @content;
+  }
+}
+
+@mixin mq-min-width($screen-size) {
+  @media (min-width: #{$screen-size}) {
+    @content;
+  }
+}
+
+@mixin mq-max-height($screen-height) {
+  @media (max-height: #{$screen-height - 1px}) {
+    @content;
+  }
+}
+
+@mixin mq-min-height($screen-height) {
+  @media (min-width: #{$screen-height}) {
+    @content;
+  }
+}

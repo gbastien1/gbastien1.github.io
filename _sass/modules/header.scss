@@ -1,0 +1,330 @@
+.site-header {
+    position: relative;
+
+    .site-header-inner {
+        padding-top: 30px;
+    }
+    .header-menu-btn {
+        position: relative;
+        width: 60px;
+        height: 60px;
+        z-index: 2;
+        cursor: pointer;
+
+        span {
+            display: block;
+            width: 100%;
+            height: 6px;
+            background-color: $white;
+            position: absolute;
+            left: 0;
+            transform: rotate(0);
+            transition: width $duration-short ease, top $duration-short ease $duration-short, transform $duration-short ease, opacity 0s ease $duration-short;
+
+            &.first {
+                top: 0;
+                width: 90%;
+            }
+            &.second {
+                top: 13px;
+            }
+            &.third {
+                top: 26px;
+                width: 75%;
+            }
+        }
+
+        &:hover {
+            span {
+            &.first {
+                width: 100%;
+            }
+            &.third {
+                width: 100%;
+            }
+        }
+        }
+    }
+
+    .menu-ctn {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        visibility: hidden;
+        transition: visibility 0s ease $duration;
+
+        .menu-item-ctn {
+            padding-left: 200px;
+            transform: translate(-100px, 0);
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity $duration-short ease, transform $duration-short ease $duration-long;
+            
+            &.selected, &:hover {
+                .menu-item {
+                    color: $white;
+                    letter-spacing: 10px;
+                }
+            }
+            &:not(:last-child) {
+                margin-bottom: 50px;
+            }
+            .menu-item {
+                font-size: 7rem;
+                font-weight: bold;
+                transition: color $duration-shorter ease, letter-spacing $duration-short ease;
+            }
+        }
+    }
+
+    @include mq-max-width($screen-md) {
+        .menu-ctn {
+            .menu-item-ctn {
+                padding-left: 180px;
+                transform: translate(-80px, 0);
+                &:not(:last-child) {
+                    margin-bottom: 40px;
+                }
+                .menu-item {
+                    font-size: 6rem;
+                }
+            }
+        }
+    }
+    @include mq-max-width($screen-sm) {
+        .menu-ctn {
+            .menu-item-ctn {
+                padding-left: 140px;
+                transform: translate(-80px, 0);
+                &:not(:last-child) {
+                    margin-bottom: 35px;
+                }
+                &.selected, &:hover {
+                    .menu-item {
+                        letter-spacing: 5px;
+                    }
+                }
+                .menu-item {
+                    font-size: 5rem;
+                }
+            }
+        }
+    }
+    @include mq-max-width($screen-xs) {
+        .site-header-inner {
+            padding-top: 20px;
+        }
+        .menu-ctn {
+            justify-content: flex-start;
+            padding-top: 110px;
+
+            .menu-item-ctn {
+                padding-left: 90px;
+                transform: translate(-60px, 0);
+                &:not(:last-child) {
+                    margin-bottom: 30px;
+                }
+                .menu-item {
+                    font-size: 4rem;
+                }
+            }
+        }
+        .header-menu-btn {
+            width: 50px;
+            height: 50px;
+        }
+    }
+    @include mq-max-width($screen-ph) {
+        .menu-ctn {
+            padding-top: 100px;
+
+            .menu-item-ctn {
+                transform: translate(-50px, 0);
+
+                &:not(:last-child) {
+                    margin-bottom: 24px;
+                }
+                &.selected, &:hover {
+                    .menu-item {
+                        letter-spacing: 3px;
+                    }
+                }
+                .menu-item {
+                    font-size: 3.2rem;
+                }
+            }
+        }
+    }
+    @include mq-max-width($screen-ip) {
+        .header-menu-btn {
+            width: 40px;
+            height: 40px;
+
+             span {
+                height: 5px;
+
+                &.first {
+                    top: 0;
+                    width: 90%;
+                }
+                &.second {
+                    top: 11px;
+                }
+                &.third {
+                    top: 22px;
+                    width: 75%;
+                }
+            }
+        }
+        .menu-ctn {
+            padding-top: 80px;
+
+            .menu-item-ctn {
+                padding-left: 70px;
+
+                &:not(:last-child) {
+                    margin-bottom: 20px;
+                }
+                &.selected, &:hover {
+                    .menu-item {
+                        letter-spacing: 2px;
+                    }
+                }
+                .menu-item {
+                    font-size: 2.8rem;
+                }
+            }
+        }
+    }
+    @include mq-max-width($screen-iip) {
+        .menu-ctn {
+            padding-top: 90px;
+
+            .menu-item-ctn {
+                padding-left: 4%;
+
+                &:not(:last-child) {
+                    margin-bottom: 20px;
+                }
+                .menu-item {
+                    font-size: 2.4rem;
+                }
+            }
+        }
+    }
+}
+.header-wave-ctn {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    overflow: hidden;
+
+    svg {
+        width: 100%;
+        height: 120px;
+        fill: $yellow;
+        transition: height $duration ease $duration-short;
+
+        #svg-path-full {
+            opacity: 0;
+        }
+    }
+
+    @include mq-max-width($screen-sm) {
+        svg {
+            width: $screen-sm;
+            min-width: $screen-sm;
+        }
+    }
+    @include mq-max-width($screen-xs) {
+        svg {
+            height: 100px;
+            width: $screen-xs;
+            min-width: $screen-xs;
+        }
+    }
+        @include mq-max-width($screen-ph) {
+        svg {
+            height: 80px;
+        }
+    }
+}
+
+
+/**
+menu open styles
+*/
+body.menu-open {
+    .main-content, .title-header {
+        opacity: 0;
+        transition: opacity $duration ease 0s;
+    }
+    .header-wave-ctn {
+        height: 100%;
+        z-index: 50;
+        
+        svg {
+            height: 100%;
+            transition: height $duration ease;
+        }
+    }
+    .menu-ctn {
+        visibility: visible;
+        z-index: 51;
+        transition: visibility 0s ease 0s;
+
+        .menu-item-ctn {
+            transform: translate(0, 0);
+            opacity: 1;
+
+            &:nth-child(1) {
+                transition: transform $duration-short ease 500ms, opacity $duration-short ease 500ms;
+            }
+             &:nth-child(2) {
+                transition: transform $duration-short ease 750ms, opacity $duration-short ease 750ms;
+            }
+             &:nth-child(3) {
+                transition: transform $duration-short ease 1000ms, opacity $duration-short ease 1000ms;
+            }
+             &:nth-child(4) {
+                transition: transform $duration-short ease 1300ms, opacity $duration-short ease 1300ms;
+            }
+        }
+    }
+
+    .header-menu-btn {
+        z-index: 52;
+        span {
+            transition: top $duration-short ease, transform $duration-short ease $duration-short, opacity 0s ease $duration-short;
+            &.first, &.second, &.third {
+                top: 27px;
+                width: 100%;
+            }
+            &.first {
+                transform: rotate(-45deg);
+            }
+            &.second {
+                opacity: 0;
+            }
+            &.third {
+                transform: rotate(45deg);
+            }
+        }
+    }
+}
+body:not(.menu-open) {
+    .main-content, .title-header {
+        transition: opacity $duration ease $duration;
+    }
+    .header-wave-ctn {
+        pointer-events: none;
+    }
+}

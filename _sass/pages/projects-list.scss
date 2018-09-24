@@ -1,0 +1,106 @@
+.projects-list-ctn {
+    margin-top: 120px;
+
+    @include mq-min-width($screen-sm) {
+        padding: 0 10%;
+    }
+}
+.project-list-item {
+    margin-bottom: 15px;
+
+    .project-list-item-inner {
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+        padding: 15px;
+
+        &:hover {
+            .project-list-item-content {
+                opacity: 1;
+            }
+        }
+
+         @include mq-max-width($screen-xs) {
+            padding: 10px;
+        }
+    }
+    .project-list-item-content {
+        width: 100%;
+        height: 100%;
+        padding: 0 10px;
+        background-color: fade-out($color: $white, $amount: 0.2);
+        transition: opacity $duration-shorter ease;
+
+        .text-ctn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .project-name {
+                font-weight: bold;
+                padding-right: 10px;
+                margin-right: 10px;
+                border-right: 1px solid currentColor;
+            }
+            .short-description {
+                font-weight: 300;
+            }
+            .project-name, .short-description {
+                font-size: 2.4rem;
+            }
+        }
+        .btn-ctn {
+            text-align: center;
+
+            .default-btn {
+                margin-bottom: -10px;
+            }
+        }
+
+        @include mq-min-width($screen-xs) {
+            opacity: 0;
+        }
+
+        @include mq-max-width($screen-xs) {
+            .text-ctn {
+                .project-name, .short-description {
+                    font-size: 2rem;
+                }
+            }
+            .btn-ctn {
+                .default-btn {
+                    margin-bottom: -15px;
+                }
+            }
+        }
+        @include mq-max-width($screen-ph) {
+            .text-ctn {
+                display: block;
+                text-align: center;
+                padding-top: 10px;
+
+                .project-name {
+                    padding-right: 0;
+                    margin-right: 0;
+                    border-right: none;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                }
+                .short-description {
+                    margin: 5px 0 10px;
+                    font-weight: normal;
+                }
+                .project-name, .short-description {
+                    font-size: 1.8rem;
+                }
+            }
+        }
+        @include mq-max-width($screen-iip) {
+            .text-ctn {
+                .project-name, .short-description {
+                    font-size: 1.6rem;
+                }
+            }
+        }
+    }
+}

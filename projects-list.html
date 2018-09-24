@@ -1,0 +1,28 @@
+---
+layout: default
+title: Liste de projets
+permalink: /projets
+---
+
+{% include title-header.html title="Portfolio" subtitle="Projets réalisés dans un cadre professionnel ou personnel" %}
+<section class="main-content projects-list site-centerer" id="projects-list-main-content-section">
+    <div class="projects-list-ctn">
+
+        {% assign projects = (site.projects | sort: 'mydate') | reverse %}
+        {% for project in projects %}
+            <div class="project-list-item">
+                <div class="project-list-item-inner" style="background-image:url('{{project.image}}')">
+                    <div class="project-list-item-content">
+                        <div class="text-ctn">
+                            <h3 class="project-name">{{project.title}}</h3>
+                            <p class="short-description">{{project.short}}</p>
+                        </div>
+                        <div class="btn-ctn">
+                            <a class="default-btn" href="{{project.url}}">Voir plus</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         {% endfor %}
+    </div>
+</section>

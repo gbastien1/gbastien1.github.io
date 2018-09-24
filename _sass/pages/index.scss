@@ -1,0 +1,132 @@
+.main-content.index {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    .title-ctn {
+        position: relative;
+        text-align: center;
+        padding: 20px 0;
+        margin-bottom: 60px;
+        margin-top: 30px;
+
+        .title {
+            font-size: 5rem;
+            position: relative;
+            z-index: 2;
+        }
+        .initials {
+            font-size: 11rem;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            display: block;
+            font-weight: bold;
+            color: $yellow;
+        }
+    }
+
+    .subtitle-ctn {
+        text-align: center;
+
+        .subtitle {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: $yellow;
+            color: $white;
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-family: $text-font;
+        }
+    }
+
+    .social-ctn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 60px;
+
+        .social-icon-ctn {
+            &:not(:last-child) {
+                margin-right: 10px;
+            }
+            img {
+                width: 50px;
+                height: 50px;
+                transition: transform $duration-shorter ease;
+            }
+
+            &:hover {
+                img {
+                    transform: translate(0, -5px);
+                }
+            }
+        }
+    }
+
+    @include mq-max-width($screen-xs) {
+         .title-ctn {
+            padding: 15px 0;
+            margin-bottom: 50px;
+            margin-top: 20px;
+
+            .title {
+                font-size: 4rem;
+            }
+            .initials {
+                font-size: 9rem;
+            }
+        }
+         .subtitle-ctn {
+            .subtitle {
+                padding: 8px 12px;
+                font-size: 1.6rem;
+            }
+        }
+        .social-ctn {
+            margin-top: 50px;
+
+            .social-icon-ctn {
+                img {
+                    width: 44px;
+                    height: 44px;
+                }
+            }
+        }
+    }
+    @include mq-max-width($screen-ip) {
+         .title-ctn {
+            padding: 10px 0;
+            margin-bottom: 40px;
+            margin-top: 20px;
+
+            .title {
+                font-size: 3rem;
+            }
+            .initials {
+                font-size: 7rem;
+            }
+        }
+         .subtitle-ctn {
+            .subtitle {
+                font-size: 1.5rem;
+            }
+        }
+        .social-ctn {
+            margin-top: 40px;
+        }
+    }
+}
+
+#particles-container {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}

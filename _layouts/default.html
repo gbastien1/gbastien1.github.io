@@ -1,7 +1,18 @@
-{% include head.html %}
+<!DOCTYPE html>
+<html>
+    {% include head.html %}
 
-{% include navigation.html %}
+    <body>
+        <div class="site-container">
+            {% include header.html %}
 
-{{ content }}
+            {{ content }}
 
-{% include footer.html %}
+            {% include footer.html %}
+        </div>
+
+        <script type="text/javascript" src="/assets/js/lib/particles.min.js"></script>
+        <script type="text/javascript" src="/assets/js/index.js"></script>
+        <script type="text/javascript" src="/assets/js/modules/header.js"></script>
+    </body>
+</html>

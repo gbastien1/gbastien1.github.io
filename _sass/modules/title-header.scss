@@ -1,0 +1,52 @@
+.title-header {
+    position: absolute;
+    top: 40px;
+    left: 25%;
+    right: 4%;
+    z-index: 5;
+
+    .title {
+        font-size: 6rem;
+        font-weight: bold;
+        margin-bottom: 12px;
+    }
+    .subtitle {
+        font-size: 2rem;
+        color: $gray-light;
+        font-weight: normal;
+        letter-spacing: 1px;
+    }
+
+    @include mq-max-width($screen-sm) {
+        left: 20%;
+    }
+    @include mq-max-width($screen-xs) {
+        left: 4%;
+        top: 60px;
+
+        .title {
+            font-size: 5rem;
+            margin-bottom: 6px;
+        }
+        .subtitle {
+            font-size: 1.8rem;
+            letter-spacing: 0;
+        }
+    }
+    @include mq-max-width($screen-ph) {
+        .title {
+            font-size: 4rem;
+        }
+        .subtitle {
+            font-size: 1.7rem;
+        }
+    }
+    @include mq-max-width($screen-ip) {
+        .title {
+            font-size: 3.6rem;
+        }
+        .subtitle {
+            font-size: 1.6rem;
+        }
+    }
+}
