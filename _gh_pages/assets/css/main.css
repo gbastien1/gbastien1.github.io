@@ -588,10 +588,10 @@ button {
       display: inline-block;
       width: 2px;
       background-color: #ffd71f; }
-  @media (min-width: 1139px) {
+  @media (min-width: 1140px) {
     .project-detail-content-ctn {
       margin-right: 12%; } }
-  @media (max-width: 1023px) {
+  @media (max-width: 1022px) {
     .project-detail-content-ctn .pc-device-ctn {
       width: 75%; }
     .project-detail-content-ctn .pc-device-ctn .label-ctn {
@@ -605,7 +605,7 @@ button {
       .project-detail-content-ctn .phone-device-ctn .label-ctn {
         top: -40px;
         left: 0; } }
-  @media (max-width: 899px) {
+  @media (max-width: 898px) {
     .project-detail-content-ctn .pc-device-ctn {
       width: 100%;
       max-width: 700px;
@@ -630,7 +630,7 @@ button {
       .project-detail-content-ctn .phone-device-ctn .label-ctn {
         top: -40px;
         left: -40px; } }
-  @media (max-width: 599px) {
+  @media (max-width: 598px) {
     .project-detail-content-ctn .label-ctn .label {
       display: block;
       padding: 10px 24px;
@@ -661,7 +661,7 @@ button {
         top: 24px;
         left: auto;
         width: 650px; } }
-  @media (max-width: 479px) {
+  @media (max-width: 478px) {
     .project-detail-content-ctn .label-ctn .label {
       padding: 8px 20px; }
     .project-detail-content-ctn .pc-device-ctn .label-ctn {
@@ -678,3 +678,33 @@ button {
         right: -500px;
         top: 10px;
         width: 600px; } }
+
+.project-detail .link-label-ctn {
+  position: absolute;
+  right: 0;
+  top: 80%;
+  z-index: 6; }
+  .project-detail .link-label-ctn .link-label {
+    display: inline-block;
+    background-color: #ffd71f;
+    padding: 12px 24px;
+    color: #fff;
+    font-size: 2.2rem;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    transition: padding 300ms ease; }
+  @media (min-width: 900px) {
+    .project-detail .link-label-ctn:hover .link-label {
+      padding-right: 50px; } }
+@media (max-width: 898px) {
+  .project-detail .link-label-ctn {
+    position: fixed;
+    top: auto;
+    bottom: 0; } }
+@media (max-width: 598px) {
+  .project-detail .link-label-ctn {
+    left: 0;
+    text-align: center; }
+    .project-detail .link-label-ctn .link-label {
+      width: 100%;
+      border-radius: 0; } }
